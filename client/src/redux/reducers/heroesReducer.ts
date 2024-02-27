@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/default-param-last */
 /* eslint-disable import/prefer-default-export */
 import type { Action, State } from './types';
+import type { Hero } from '../../features/heroes/types';
 
-const initState: State = {
-  heroes: [],
+type InitState = {
+  heroes: Hero[];
 };
 
-export const heroesReducer = (state: State = initState, action: Action): State => {
+export const heroesReducer = (state: State = InitState, action: Action): State => {
   switch (action.type) {
     case 'heroes/load':
       return {

@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 
 const HeroItemPage = (): JSX.Element => {
-  const { heroId } = useParams();
-  const heroes = useSelector((store: RootState) => store.heroes.heroes);
-  const currentHero = heroId && heroes.find((hero) => hero.id === +heroId);
+  const { heroId } = useParams;
+  const { hero } = useSelector((store: RootState) => store.heroes);
+  const currentHero = heroId && hero.find((hero) => hero.id === heroId);
 
   return currentHero ? (
     <div className="hero-item-page__item">

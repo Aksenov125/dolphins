@@ -8,7 +8,7 @@ const HeroItem = ({ hero }: { hero: Hero }): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const onHandleRemoveHero = async (id: HeroId): Promise<void> => {
-    const res = await fetch(`/api/heroes/${id}`, {
+    const res = await fetch(`/api/heroes/:${id}`, {
       method: 'DELETE',
     });
     const data: { message: string; heroId: HeroId } = (await res.json()) as {

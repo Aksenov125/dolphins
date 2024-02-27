@@ -19,15 +19,14 @@ const FormAddHero = (): JSX.Element => {
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({
+      body: JSON.stringify(
         name,
         img,
         description,
-        film,
-      }),
+      ),
     });
-    const data: { hero: Hero } = (await res.json()) as { hero: Hero };
-    dispatch({ type: 'heroes/add', payload: data.hero });
+    const data: { heroes: Hero } = (await res.json()) as { heroes: Hero };
+    dispatch({ type: 'heroes/add', payload: data.heroes });
   };
 
   return (

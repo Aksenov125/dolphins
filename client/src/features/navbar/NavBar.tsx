@@ -5,10 +5,11 @@ import './styles/navbar.scss';
 
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../redux/store';
+import type { RootState} from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 
 const NavBar = (): JSX.Element => {
-  const user = useSelector((store: RootState) => store.auth.auth);
+  const {user} = useSelector((store: RootState) => store.auth.auth);
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
