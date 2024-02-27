@@ -6,7 +6,7 @@ import { RootState } from '../../redux/store';
 
 const HeroItemPage = (): JSX.Element => {
   const { heroId } = useParams();
-  const heroes = useSelector((store: RootState) => store.heroes);
+  const heroes = useSelector((store: RootState) => store.heroes.heroes);
   const currentHero = heroId && heroes.find((hero) => hero.id === +heroId);
 
   return currentHero ? (

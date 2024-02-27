@@ -22,6 +22,6 @@ const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(
-    `А мы пашем как буйволы и ныряем как дельфины на ${PORT} порту. Режим: ${process.env.NODE_ENV}`
+    `А мы пашем как буйволы и ныряем как дельфины на ${PORT} порту. Режим: `
   );
 });
